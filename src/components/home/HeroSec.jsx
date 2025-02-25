@@ -45,7 +45,7 @@ const HeroSec = () => {
           </span>
         </h1>
 
-        <p className="sm:text-[1.4vw]  sm:w-[33vw] text-lg sm:leading-[1.6vw]  -top-20  relative sm:absolute sm:top-[36vw] sm:left-[33.5vw]  ">
+        <p className="sm:text-[1.4vw] px-18  sm:px-0  sm:w-[33vw] text-lg sm:leading-[1.6vw]  -top-20  relative sm:absolute sm:top-[36vw] sm:left-[33.5vw]  ">
           The #1 most trusted partner in influencer marketing, connecting the
           world’s leading brands with the best-suited top talent.
         </p>
