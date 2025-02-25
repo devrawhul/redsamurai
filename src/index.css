@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: aeonic;
+    src: url(../src/assets/fonts/aeonik-light.woff2);
+    font-weight: 200;
+}
+@font-face {
+    font-family: aeonic;
+    src: url(../src/assets/fonts/aeonik-medium.woff2);
+    font-weight: 300;
+}
+@font-face {
+    font-family: aeonic;
+    src: url(../src/assets/fonts/aeonik-regular.woff2);
+    font-weight: 400;
+}
+@font-face {
+    font-family: aeonic;
+    src: url(../src/assets/fonts/aeonik-bold.woff2);
+    font-weight: 700;
+}
+@font-face {
+    font-family: workhorse;
+    src: url(../src/assets/fonts/WorkhorseScriptTest-Display.woff2);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: aeonic;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+.cursive {
+    font-family: workhorse;
+    font-weight: 400;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.pink {
+    color: #bb70ad;
+}
+.pinkbg {
+    background-color: #bb70ad;
+}
