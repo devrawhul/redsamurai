@@ -7,7 +7,7 @@ const Footer = () => {
         <img src="" alt="" />
       </div>
 
-      <div className=" sm:mt-[2vw] justify-between sm:flex-row gap-16 flex-col sm:px-[3.5vw] p-6">
+      <div className=" sm:mt-[2vw] justify-between sm:flex-row gap-16 flex-col sm:px-[3.5vw] sm:pb-[1.8vw] p-6">
         <div className=" sm:flex justify-between sm:mb-[8vw]">
           <ul className="flex  sm:text-[2.8vw] leading-10 sm:leading-[3vw] sm:gap-0 items-start font-bold uppercase flex-col text-3xl">
             <li>Our Work</li>

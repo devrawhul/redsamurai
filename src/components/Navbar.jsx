@@ -1,10 +1,15 @@
-import React, { useState, useRef } from "react";
-import { GoArrowRight } from "react-icons/go";
+import React, { useState } from "react";
+import { motion } from "motion/react";
 
 const Navbar = () => {
   const [display, setDisplay] = useState("hidden");
   const [hamText, setHamText] = useState("Menu");
   const [invert, setInvert] = useState("");
+
+  const menu = ["Our Work", "Company", "Services"];
+  if (window.innerWidth <= 768) {
+    menu.push("Get In Touch");
+  }
 
   function toggleMenu() {
     if (window.innerWidth <= 768) {
@@ -36,25 +41,31 @@ const Navbar = () => {
 
       {/* Menus */}
       <div
-        className={`sm:py-0 sm:flex pt-46  sm:px-0 px-6 ${display} top-0 left-0 sm:bg-transparent bg-[#d6d6d6] text-black sm:text-white/65 w-screen sm:w-auto sm:h-auto h-screen`}
+        className={`sm:py-0 sm:flex pt-46  sm:px-0 px-6 ${display} top-0 left-0 sm:bg-transparent  bg-[#d6d6d6] text-black  w-screen sm:w-auto sm:h-auto h-screen`}
       >
         <ul
-          className={`  text-5xl sm:text-[1vw] flex-col sm:flex-row flex gap-4 sm:gap-[4vw] sm:justify-between mb-36 sm:mb-0 `}
+          className={`  text-5xl sm:text-[1vw] flex-col sm:flex-row flex gap-4 sm:gap-[3.5vw]  sm:justify-between mb-36 sm:mb-0 border-yellow-500  overflow-hidden`}
         >
-          <li>
-            <a href="#home">Our Work</a>
-          </li>
-          <li>
-            <a href="#about">Company</a>
-          </li>
-          <li>
-            <a href="#services">Services</a>
-          </li>
-          <li>
-            <a href="#contact" className="sm:hidden">
-              Get In Touch
-            </a>
-          </li>
+          {menu.map((item, index) => (
+            <motion.li
+              data-content={item}
+              className="cursor-pointer after:cursor-pointer relative  after:text-nowrap sm:text-white text-black  after:absolute after:top-8 after:left-0   sm:after:content-[attr(data-content)]"
+              key={index}
+              whileHover={{
+                opacity: 1,
+                y: -33,
+              }}
+              initial={{
+                opacity: 0.7,
+              }}
+              transition={{
+                duration: 0.25,
+                ease: "easeInOut",
+              }}
+            >
+              <a href="">{item}</a>
+            </motion.li>
+          ))}
         </ul>
 
         {/* social */}
@@ -67,14 +78,43 @@ const Navbar = () => {
       </div>
 
       {/* buttons */}
-      <div className=" cursor-pointer hidden sm:flex button my-8 sm:my-0 sm:gap-[.8vw] gap-4 justify-start items-center">
-        <div className="h-8 w-8 sm:w-[1.6vw] sm:h-[1.6vw] pinkbg justify-center items-center flex rounded-full">
-          <div className="text-black text-[1vw]">
-            <GoArrowRight />
-          </div>
+      <motion.div
+        whileHover="hover"
+        className=" cursor-pointer hidden sm:flex button my-8 sm:my-0 sm:gap-[.8vw] gap-4 justify-start items-center"
+      >
+        <div className="h-8 w-8 sm:w-[1.8vw] sm:h-[1.8vw] pinkbg justify-center items-center overflow-hidden flex rounded-full text-black">
+          <motion.div
+            variants={{
+              hover: {
+                x: 32,
+                transition: {
+                  duration: 0.3,
+                  ease: "easeInOut",
+                },
+              },
+            }}
+            className=" text-[1vw]  before:content-['→'] relative before:text-nowrap before:absolute before:top-[-.4px]  before:left-[-2rem]   "
+          >
+            <span className="leading-none relative top-[-.4px]">→</span>
+          </motion.div>
         </div>
-        <h4 className="sm:text-[1vw] text-white">Get in Touch</h4>
-      </div>
+        <div className="relative  overflow-hidden ">
+          <motion.h4
+            variants={{
+              hover: {
+                y: -33,
+                transition: {
+                  duration: 0.3,
+                  ease: "easeInOut",
+                },
+              },
+            }}
+            className="sm:text-[1vw] text-white relative after:content-['Get_in_Touch'] after:text-nowrap after:absolute after:left-0  after:top-8"
+          >
+            Get in Touch
+          </motion.h4>
+        </div>
+      </motion.div>
     </nav>
   );
 };

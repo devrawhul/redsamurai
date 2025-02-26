@@ -2,7 +2,6 @@ import React from "react";
 
 const HeroSec = () => {
   return (
-    // sm:h-[40vh] md:h-[50vh] lg:h-[100vh]
     <div className=" bg-black text-center h-[90vh] sm:h-[60vw]  flex  ">
       <div className="relative text-[19vw] sm:text-[8vw]  text-white w-full flex flex-col justify-center items-center">
         <h1 className=" gap-4 sm:gap-[15vw] flex font-bold uppercase z-9  sm:absolute sm:top-[10vw] sm:left-[1/2]">
@@ -20,12 +19,7 @@ const HeroSec = () => {
                 loop
                 playsInline
                 className="media vit init w-full"
-                onPlaying={() => {
-                  // if (!this.classList.contains("init")) {
-                  //   this.pause();
-                  //   this.classList.add("init");
-                  // }
-                }}
+                onPlaying={() => {}}
                 poster="https://rhythm-influence.transforms.svdcdn.com/staging/David-Video-Poster.png?w=280&amp;h=400&amp;auto=compress%2Cformat&amp;fit=crop&amp;dm=1730986844&amp;s=e775cc6b51bdc360b8f16b265e8baeaa"
               >
                 <source src="https://servd-rhythm-influence.b-cdn.net/staging/David-V8-Edit.mp4" />
@@ -45,9 +39,9 @@ const HeroSec = () => {
           </span>
         </h1>
 
-        <p className="sm:text-[1.4vw] px-18  sm:px-0  sm:w-[33vw] text-lg sm:leading-[1.6vw]  -top-20  relative sm:absolute sm:top-[36vw] sm:left-[33.5vw]  ">
-          The #1 most trusted partner in influencer marketing, connecting the
-          world’s leading brands with the best-suited top talent.
+        <p className="sm:text-[1.4vw] px-18  sm:px-0  sm:w-[33vw] text-lg sm:leading-[1.8vw]  -top-20  relative sm:absolute sm:top-[36vw] sm:left-[33.5vw]  ">
+          Trusted by Leading Brands to Forge the Impactful Market Presence.
+          Delivering masterful media & marketing with precision & pure quality
         </p>
       </div>
     </div>
