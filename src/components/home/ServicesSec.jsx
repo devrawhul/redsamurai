@@ -1,7 +1,7 @@
 import React from "react";
 import TestimonialsSec from "./TestimonialsSec";
 import { GoArrowRight } from "react-icons/go";
-
+import { motion } from "motion/react";
 const ServicesSec = () => {
   return (
     <div className="relative  w-full h-full ">
@@ -58,32 +58,91 @@ const ServicesSec = () => {
           <li className="border-b sm:h-[3vw] border-white/75">
             Marketing Strategy
           </li>
+
           {/* buttons */}
-          <div className="button my-8 sm:my-[2.5vw] text-xl sm:text-[1vw] flex gap-4 justify-start items-center">
-            <div className="h-8 w-8 pinkbg justify-center items-center flex rounded-full">
-              <div className="text-black">
-                <GoArrowRight />
-              </div>
+          <motion.div
+            whileHover="hover"
+            className=" cursor-pointer sm:pt-[2vw] flex button my-8 sm:my-0 sm:gap-[.8vw] gap-4 justify-start items-center"
+          >
+            <div className="h-8 w-8 sm:w-[1.8vw] sm:h-[1.8vw] pinkbg justify-center items-center overflow-hidden flex rounded-full text-black">
+              <motion.div
+                variants={{
+                  hover: {
+                    x: 32,
+                    transition: {
+                      duration: 0.3,
+                      ease: "easeInOut",
+                    },
+                  },
+                }}
+                className=" sm:text-[1vw] text-2xl   before:content-['→'] relative before:text-nowrap before:absolute before:top-[-.4px]  before:left-[-2rem]   "
+              >
+                <span className="leading-none relative top-[-.4px]">→</span>
+              </motion.div>
             </div>
-            <h4 className="capitalize ">See Our services</h4>
-          </div>
+            <div className="relative  overflow-hidden ">
+              <motion.h4
+                variants={{
+                  hover: {
+                    y: -33,
+                    transition: {
+                      duration: 0.3,
+                      ease: "easeInOut",
+                    },
+                  },
+                }}
+                className="sm:text-[1vw] text-xl text-white relative after:content-['See_our_services'] after:text-nowrap after:absolute after:left-0 capitalize after:top-8"
+              >
+                See our services
+              </motion.h4>
+            </div>
+          </motion.div>
         </ol>
 
-        <div className="mt-32 sm:mt-[2vw] sm:w-[26vw] sm:leading-[2rem] leading-2rem sm:text-white sm:text-[1.4vw]">
+        <div className="mt-32 sm:mt-[2vw]  sm:w-[26vw] sm:leading-[2rem] leading-2rem sm:text-white sm:text-[1.4vw]">
           <p className="">
             From talent discovery to advanced campaign analytics, our team
             handles every step of the process for successful partnerships with
             your brand.
           </p>
           {/* buttons */}
-          <div className="button my-8 sm:my-[2.5vw] text-xl sm:text-[1vw] flex gap-4 justify-start items-center">
-            <div className="h-8 w-8 pinkbg justify-center items-center flex rounded-full">
-              <div className="text-black">
-                <GoArrowRight />
-              </div>
+          <motion.div
+            whileHover="hover"
+            className=" cursor-pointer sm:pt-[2vw] flex button my-8 sm:my-0 sm:gap-[.8vw] gap-4 justify-start items-center"
+          >
+            <div className="h-8 w-8 sm:w-[1.8vw] sm:h-[1.8vw] pinkbg justify-center items-center overflow-hidden flex rounded-full text-black">
+              <motion.div
+                variants={{
+                  hover: {
+                    x: 32,
+                    transition: {
+                      duration: 0.3,
+                      ease: "easeInOut",
+                    },
+                  },
+                }}
+                className=" sm:text-[1vw] text-2xl   before:content-['→'] relative before:text-nowrap before:absolute before:top-[-.4px]  before:left-[-2rem]   "
+              >
+                <span className="leading-none relative top-[-.4px]">→</span>
+              </motion.div>
             </div>
-            <h4 className="capitalize ">About Our company</h4>
-          </div>
+            <div className="relative  overflow-hidden ">
+              <motion.h4
+                variants={{
+                  hover: {
+                    y: -33,
+                    transition: {
+                      duration: 0.3,
+                      ease: "easeInOut",
+                    },
+                  },
+                }}
+                className="sm:text-[1vw] text-xl text-white relative after:content-['About_our_company'] after:text-nowrap after:absolute after:left-0 capitalize after:top-8"
+              >
+                About our company
+              </motion.h4>
+            </div>
+          </motion.div>
         </div>
       </div>
       <TestimonialsSec />

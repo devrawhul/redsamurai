@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="text-[#999]     ">
+    <div className="text-[#999]  ">
       <div>
         <img src="" alt="" />
       </div>
