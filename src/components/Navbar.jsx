@@ -21,16 +21,17 @@ const Navbar = () => {
 
   return (
     <nav
-      className={` text-md sm:py-[1vw] z-[99] py-10 sm:px-[3.5vw]  fixed left-0 top-0 flex justify-between items-center w-full`}
+      className={` text-md sm:py-[1vw] z-[99] py-4 sm:px-[3.5vw]  fixed left-0 top-0 flex justify-between items-center w-full`}
     >
       {/* Logo */}
       <div
         className={`${invert}  z-[99] px-6 sm:px-0 text-white  flex justify-between items-center sm:w-auto w-full `}
       >
         <div className="text-4xl sm:text-[3vw] font-bold cursor-pointer">
-          <img src="" alt="" />
-          <span className="cursive  ">R</span>
-          <span>ed</span>
+          {/* <img src={'/public/path_to_your_image.png'} alt="My Image" /> */}
+          <img className="w-32 sm:w-[8vw]" src="./src/assets/Logo.png" alt="" />
+          {/* <span className="cursive  ">R</span>
+          <span>ed</span> */}
         </div>
 
         {/* Ham */}

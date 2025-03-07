@@ -24,7 +24,7 @@ const ProjectsSecCard = ({ data }) => {
           start: "top center", // Start animation when the top of the element hits the center of the viewport
           end: "bottom center", // End animation when the bottom of the element hits the center of the viewport
           scrub: 1, // Smooth scrubbing
-          markers: true, // For debugging (remove in production)
+          // For debugging (remove in production)
         },
       }
     );
