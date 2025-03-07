@@ -28,8 +28,12 @@ const Navbar = () => {
         className={`${invert}  z-[99] px-6 sm:px-0 text-white  flex justify-between items-center sm:w-auto w-full `}
       >
         <div className="text-4xl sm:text-[3vw] font-bold cursor-pointer">
-          {/* <img src={'/public/path_to_your_image.png'} alt="My Image" /> */}
-          <img className="w-32 sm:w-[8vw]" src="./src/assets/Logo.png" alt="" />
+          <img
+            className="w-32 sm:w-[8vw]"
+            img
+            src="https://iili.io/3KGl6jp.png"
+            alt=""
+          />
           {/* <span className="cursive  ">R</span>
           <span>ed</span> */}
         </div>
