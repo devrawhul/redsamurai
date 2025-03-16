@@ -82,12 +82,12 @@ const ProjectsSecCard = ({ data }) => {
         <div className="sm:text-[1vw] text-lg uppercase font-bold">
           WE PARTNERED WITH
         </div>
-        <div className="my-2 sm:my-[.6vw] uppercase font-bold sm:text-[1.25vw] text-2xl leading-none">
+        {/* <div className="my-2 sm:my-[.6vw] uppercase font-bold sm:text-[1.25vw] text-2xl leading-none">
           <span className="cursive font-light">M</span>
           <span>ARIAH CAREY TO CREATE CONTENT WITH </span>
           <span className="cursive font-light">K</span>
           <span>AY JEWELERS</span>
-        </div>
+        </div> */}
         <p className="text-lg sm:text-[1vw]">{data.brand}</p>
       </div>
     </div>

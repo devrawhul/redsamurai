@@ -40,36 +40,46 @@ const ProjectsSec = () => {
   const PrCardData = [
     {
       link: "projects/clip1.mp4",
-      brand: "Essentia Homes",
+      brand: "Essentia Environments",
       desc: "Lorem ipsum dolor sit amet.",
     },
     {
       link: "projects/clip5.mp4",
-      brand: "MHV Media",
+      brand: "Sardar Exclusive",
       desc: "Lorem ipsum dolor sit amet.",
     },
     {
       link: "projects/clip3.mp4",
-      brand: "Eicher Motors",
+      brand: "Essentia Environments",
       desc: "Lorem ipsum dolor sit amet.",
     },
     {
       link: "projects/clip2.mp4",
-      brand: "Eicher Motors",
+      brand: "Essentia Environments",
       desc: "Lorem ipsum dolor sit amet.",
     },
     {
       link: "projects/clip4.mp4",
-      brand: "Eicher Motors",
+      brand: "DB Valves",
       desc: "Lorem ipsum dolor sit amet.",
     },
     {
       link: "projects/clip6.mp4",
-      brand: "Eicher Motors",
+      brand: "ElectroRide",
       desc: "Lorem ipsum dolor sit amet.",
     },
     {
       link: "projects/clip7.mp4",
+      brand: "VC Panel",
+      desc: "Lorem ipsum dolor sit amet.",
+    },
+    {
+      link: "projects/clip8.mp4",
+      brand: "Eicher Motors",
+      desc: "Lorem ipsum dolor sit amet.",
+    },
+    {
+      link: "projects/clip9.mp4",
       brand: "Eicher Motors",
       desc: "Lorem ipsum dolor sit amet.",
     },
