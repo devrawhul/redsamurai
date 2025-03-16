@@ -56,3 +56,27 @@ body {
 .pinkbg {
     background-color: #bb70ad;
 }
+
+video:-webkit-full-screen {
+    object-fit: contain !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+video:-moz-full-screen {
+    object-fit: contain !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+video:-ms-fullscreen {
+    object-fit: contain !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+video:fullscreen {
+    object-fit: contain !important;
+    width: 100% !important;
+    height: 100% !important;
+}

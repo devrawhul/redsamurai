@@ -39,50 +39,45 @@ const ProjectsSec = () => {
 
   const PrCardData = [
     {
-      link: "https://example.com/video1.mp4",
+      link: "projects/clip1.mp4",
       brand: "Essentia Homes",
       desc: "Lorem ipsum dolor sit amet.",
     },
     {
-      link: "https://example.com/video1.mp4",
+      link: "projects/clip5.mp4",
       brand: "MHV Media",
       desc: "Lorem ipsum dolor sit amet.",
     },
     {
-      link: "https://example.com/video1.mp4",
+      link: "projects/clip3.mp4",
       brand: "Eicher Motors",
       desc: "Lorem ipsum dolor sit amet.",
     },
     {
-      link: "https://example.com/video1.mp4",
+      link: "projects/clip2.mp4",
       brand: "Eicher Motors",
       desc: "Lorem ipsum dolor sit amet.",
     },
     {
-      link: "https://example.com/video1.mp4",
+      link: "projects/clip4.mp4",
       brand: "Eicher Motors",
       desc: "Lorem ipsum dolor sit amet.",
     },
     {
-      link: "https://example.com/video1.mp4",
+      link: "projects/clip6.mp4",
       brand: "Eicher Motors",
       desc: "Lorem ipsum dolor sit amet.",
     },
     {
-      link: "https://example.com/video1.mp4",
-      brand: "Eicher Motors",
-      desc: "Lorem ipsum dolor sit amet.",
-    },
-    {
-      link: "https://example.com/video1.mp4",
+      link: "projects/clip7.mp4",
       brand: "Eicher Motors",
       desc: "Lorem ipsum dolor sit amet.",
     },
   ];
 
   return (
-    <div className="wrpr  overflow-hidden w-full flex justify-center flex-col sm:py-[4vw] sm:h-[100vh]  sticky top-0 py-12">
-      <h3 className="sm:px-[3.5vw] px-6 uppercase text-xs sm:text-[1vw] sm:mb-[-1.6vw] mb-8">
+    <div className="wrpr   overflow-hidden w-full flex justify-center flex-col sm:py-[4vw] sm:h-[100vh]  sticky top-0 py-12">
+      <h3 className="sm:px-[3.5vw] px-6 pt-6 sm:pt-0 uppercase text-xs sm:text-[1vw] sm:mb-[-1.6vw] mb-4">
         Previous work
       </h3>
       <div className="relative w-full px-4 cntnt">

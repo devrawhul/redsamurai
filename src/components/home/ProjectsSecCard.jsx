@@ -6,59 +6,87 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ProjectsSecCard = ({ data }) => {
   const animateImgRef = useRef(null);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const animateImg = animateImgRef.current;
 
-    // Animation for the "animateImg" element
+    // GSAP Animation for video reveal
     gsap.fromTo(
       animateImg,
+      { top: "8vw" }, // Initial state
       {
-        top: "8vw", // Initial position (covering the text)
-      },
-      {
-        top: 0,
-        stagger: 0.5, // Move up by 8vw (revealing the text)
+        top: 0, // Final state
         scrollTrigger: {
-          trigger: animateImg, // Trigger when the element comes into view
-          start: "top center", // Start animation when the top of the element hits the center of the viewport
-          end: "bottom center", // End animation when the bottom of the element hits the center of the viewport
-          scrub: 1, // Smooth scrubbing
-          // For debugging (remove in production)
+          trigger: animateImg, // Element to trigger the animation
+          start: "right 40%", // Start animation when the card is 40% from the right
+          end: "left 40%", // End animation when the card is 40% from the left
+          scrub: 1.5, // Smoothly animate on scroll
         },
       }
     );
+    // Add a fullscreenchange event listener to handle exiting fullscreen
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement) {
+        // Exit fullscreen mode
+        ScrollTrigger.refresh(); // Recalculate scroll positions
+        if (videoRef.current) {
+          videoRef.current.muted = true; // Mute the video after exiting fullscreen
+        }
+      }
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
 
     // Cleanup
     return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
+  const handleFullScreen = (e) => {
+    // Check if the clicked element is the video
+    if (e.target.tagName.toLowerCase() === "video" && videoRef.current) {
+      if (videoRef.current.requestFullscreen) {
+        videoRef.current.requestFullscreen();
+      } else if (videoRef.current.webkitRequestFullscreen) {
+        videoRef.current.webkitRequestFullscreen(); // Safari
+      } else if (videoRef.current.msRequestFullscreen) {
+        videoRef.current.msRequestFullscreen(); // IE/Edge
+      }
+    }
+  };
+
   return (
-    <div className="projContainer relative flex top-[3.5vw] flex-col justify-start sm:min-w-[20vw] sm:w-[20vw] sm:h-[36vw] h-auto min-w-[20rem] w-[20rem] ">
+    <div
+      className="projContainer relative flex flex-col justify-start sm:min-w-[20vw] sm:w-[20vw] sm:h-[36vw] h-auto min-w-[90vw] w-[90vw] cursor-pointer mx-auto" // Adjusted for mobile view
+      onClick={handleFullScreen} // Trigger fullscreen on card click
+    >
       <div
         ref={animateImgRef}
-        className="animateImg  rounded-3xl sm:rounded-[1.6vw] overflow-hidden relative z-1 h-full w-full"
+        className="animateImg rounded-3xl sm:rounded-[1.6vw] overflow-hidden relative z-1 h-[58vh] sm:h-full w-full" // Adjusted height for mobile view
       >
         <video
-          className="media w-full vid played object-contain"
+          ref={videoRef}
+          className="media w-full h-full vid played object-cover" // Use object-cover for better scaling
           loop
           playsInline
-          poster="https://rhythm-influence.transforms.svdcdn.com/staging/Mariah_Poster.png?w=320&h=560&auto=compress%2Cformat&fit=crop&dm=1733156415&s=d2a0bf388444e9e1d7f6dc7d78ec352e"
+          autoPlay
+          muted
         >
           <source src={data.link} />
         </video>
       </div>
-      <div className="relative">
-        <div className="mt-4 sm:mt-[1.4vw] sm:text-[1vw] text-lg uppercase font-bold">
-          We Partnered with
+      <div className="relative mt-4 sm:mt-[1.4vw] text-left sm:text-left">
+        <div className="sm:text-[1vw] text-lg uppercase font-bold">
+          WE PARTNERED WITH
         </div>
-        <div className="my-4 sm:my-[.6vw] uppercase font-bold sm:text-[1.25vw] text-2xl leading-none">
+        <div className="my-2 sm:my-[.6vw] uppercase font-bold sm:text-[1.25vw] text-2xl leading-none">
           <span className="cursive font-light">M</span>
-          <span>ariah carey to create content with</span>
+          <span>ARIAH CAREY TO CREATE CONTENT WITH </span>
           <span className="cursive font-light">K</span>
-          <span>ay jewelers</span>
+          <span>AY JEWELERS</span>
         </div>
         <p className="text-lg sm:text-[1vw]">{data.brand}</p>
       </div>
